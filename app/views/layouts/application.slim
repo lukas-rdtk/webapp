@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title My Webapp!
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+    javascript:
+        document.addEventListener('DOMContentLoaded', function() {
+            var closeButton = document.querySelector('.alert .close');
+            closeButton.addEventListener('click', function() {
+                this.parentElement.style.display = 'none';
+            });
+        });
+
+  body
+    .container
+      - if flash.any?
+        .row
+          .col-md-12
+            - flash.each do |key, value|
+              .alert class="alert alert-#{key}"
+                = value
+                button.close type="button" data-dismiss="alert" aria-label="Close"
+                  span aria-hidden="true" &times;
+
+      = yield
