@@ -1,0 +1,23 @@
+h1 Fuel Consumption Records
+
+table.table.table-striped
+  thead
+    tr
+      th Liters
+      th Price
+      th Refuel Date
+      th Distance
+      th Average Consumption
+      th Actions
+  tbody
+    - @fuel_consumptions.each do |fuel_consumption|
+      tr
+        td = fuel_consumption.liters
+        td = fuel_consumption.price
+        td = fuel_consumption.refuel_date
+        td = fuel_consumption.distance
+        td = fuel_consumption.avg_consumption
+        td
+          = button_to 'Delete', fuel_consumption_path(fuel_consumption), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger', title: 'Delete Fuel Record'
+
+= link_to 'New Fuel Record', new_fuel_consumption_path, class: 'btn btn-primary'
