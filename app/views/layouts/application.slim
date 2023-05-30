@@ -7,9 +7,9 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
     javascript:
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var closeButton = document.querySelector('.alert .close');
-            closeButton.addEventListener('click', function() {
+            closeButton.addEventListener('click', function () {
                 this.parentElement.style.display = 'none';
             });
         });
@@ -22,7 +22,6 @@ html
             - flash.each do |key, value|
               .alert class="alert alert-#{key}"
                 = value
-                button.close type="button" data-dismiss="alert" aria-label="Close"
-                  span aria-hidden="true" &times;
+                button.close type="button" class="btn-close" aria-label="Close"
 
       = yield
