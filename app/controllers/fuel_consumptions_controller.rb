@@ -27,6 +27,6 @@ class FuelConsumptionsController < ApplicationController
   private
 
   def fuel_consumption_params
-    params.require(:fuel_consumption).permit(:liters, :price, :refuel_date, :distance, :avg_consumption)
+    params.require(:fuel_consumption).permit(:car, :liters, :price, :refuel_date, :distance, :avg_consumption)
   end
 end

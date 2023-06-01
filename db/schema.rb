@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_18_195044) do
     t.float "avg_consumption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "car"
   end
 
 end

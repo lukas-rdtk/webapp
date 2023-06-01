@@ -9,6 +9,11 @@ h1 New Fuel Record
           li = msg
 
   .col-md-6
+    = form.label :car, class: 'form-label'
+    .dropdown
+      = form.select :car, options_for_select([['Olè', 'Olè'], ['roter Flitzer', 'roter Flitzer']], prompt: 'Select Car'), class: 'form-select'
+
+  .col-md-6
     = form.label :liters, class: 'form-label'
     = form.text_field :liters, class: 'form-control'
 
@@ -16,7 +21,7 @@ h1 New Fuel Record
     = form.label :price, class: 'form-label'
     = form.text_field :price, class: 'form-control'
 
-  .col-12
+  .col-md-6
     = form.label :refuel_date, class: 'form-label'
     = form.date_field :refuel_date, class: 'form-control'
 
