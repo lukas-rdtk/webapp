@@ -1,0 +1,37 @@
+h1 New Fuel Record
+
+= form_with model: @fuel_consumption, class: 'row g-3' do |form|
+  - if @fuel_consumption.errors.any?
+    .alert.alert-danger
+      h4 Alert!
+      ul
+        - @fuel_consumption.errors.full_messages.each do |msg|
+          li = msg
+
+  .col-md-6
+    = form.label :car, class: 'form-label'
+    .dropdown
+      = form.select :car, options_for_select([['Olè', 'Olè'], ['roter Flitzer', 'roter Flitzer']], prompt: 'Select Car'), class: 'form-select'
+
+  .col-md-6
+    = form.label :liters, class: 'form-label'
+    = form.text_field :liters, class: 'form-control'
+
+  .col-md-6
+    = form.label :price, class: 'form-label'
+    = form.text_field :price, class: 'form-control'
+
+  .col-md-6
+    = form.label :refuel_date, class: 'form-label'
+    = form.date_field :refuel_date, class: 'form-control'
+
+  .col-md-6
+    = form.label :distance, class: 'form-label'
+    = form.number_field :distance, class: 'form-control'
+
+  .col-md-6
+    = form.label :avg_consumption, class: 'form-label'
+    = form.text_field :avg_consumption, class: 'form-control'
+
+  .col-12
+    = form.submit 'Create Fuel Record', class: 'btn btn-primary'
