@@ -1,0 +1,4 @@
+- flash.each do |level, message|
+  .alert.alert-dismissible.m-2 class="#{flash_class(level)}"
+    = message
+    button.btn-close type="button" data-bs-dismiss="alert" aria-label="Close"

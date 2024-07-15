@@ -57,4 +57,9 @@ Rails.application.configure do
 
   # Annotate rendered view with file names.
   # config.action_view.annotate_rendered_view_with_filenames = true
+
+  config.require_master_key = true
+
+  config.logger = Logger.new("log/webapp.log", "daily")
+  config.log_level = :debug
 end
