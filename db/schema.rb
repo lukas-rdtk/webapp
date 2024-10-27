@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_01_201055) do
+ActiveRecord::Schema[7.0].define(version: 2024_10_27_132953) do
   create_table "fuel_consumptions", force: :cascade do |t|
     t.float "liters"
     t.float "price"
