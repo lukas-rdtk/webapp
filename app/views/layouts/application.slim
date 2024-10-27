@@ -1,27 +1,22 @@
 doctype html
-html
+html lang='de'
   head
-    title My Webapp!
-    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title = content_for(:title) || "Webapp"
+
+    = csrf_meta_tags
+    = csp_meta_tag
+
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', defer: true
+    = javascript_importmap_tags
 
-    javascript:
-        document.addEventListener('DOMContentLoaded', function () {
-            var closeButton = document.querySelector('.alert .close');
-            closeButton.addEventListener('click', function () {
-                this.parentElement.style.display = 'none';
-            });
-        });
+  body.bg-light
+    header
+      = render partial: 'layouts/header'
 
-  body
-    .container
-      - if flash.any?
-        .row
-          .col-md-12
-            - flash.each do |key, value|
-              .alert class="alert alert-#{key}"
-                = value
-                button.close type="button" class="btn-close" aria-label="Close"
-
+    main.container-fluid.px-4.pb-4.px-xl-0.p-1
+      = render partial: 'layouts/flash'
       = yield
+
+    footer.footer
+      = render partial: 'layouts/footer'

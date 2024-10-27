@@ -1,1 +1,129 @@
-@import 'bootstrap';
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap";
+@import "rails_bootstrap_forms.css";
+
+$footerTextColor: #57564e;
+$footerBackgroundColor: #f5f5f5;
+
+body > main {
+  margin-top: 20px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px; /* Margin bottom by footer height */
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  line-height: 60px; /* Vertically center the text there */
+  background-color: $footerBackgroundColor;
+}
+.footer span {
+  margin-right: 10px;
+}
+
+.footer a {
+  color: $footerTextColor;
+}
+
+.badge-lg {
+  font-size: 1em;
+}
+
+label.required:after {
+  content:" *";
+}
+
+.error-centered > p {
+  margin-bottom: 0;
+}
+
+.elementspace {
+  margin-left: 3px;
+}
+
+.navbar-brand {
+  padding-left:15px;
+}
+
+.data-list {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.data-list th, .data-list td {
+  text-align: center;
+  padding: 5px;
+}
+
+.data-list th {
+  background-color: #f2f2f2;
+}
+
+.home-button {
+  display: flex;
+  justify-content: center;
+}
+
+.table-scroll {
+  max-height: 80vh;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.span-countdown {
+  margin-top: 5px;
+  position: relative;
+}
+
+#name-countdown {
+  position: absolute;
+  right: 10px;
+  bottom: 50px;
+  font-size: 12px;
+  color: #888;
+}
+
+.webapp-logo {
+  height: 44px;
+  padding-right: 8px;
+}
+
+.table-scroll thead th {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+
+.table-scroll tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.future-scheduled {
+  background-color: rgba(255, 53, 69, 0.4) !important;
+}
+
+.column_search {
+  text-align: center;
+}

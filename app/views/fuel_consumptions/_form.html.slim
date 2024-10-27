@@ -1,0 +1,12 @@
+div data-controller="fuel_consumptionform"
+  = bootstrap_form_for(@fuel_consumption, url: fuel_consumptions_path, method: :post) do |form|
+    h1
+      | Anlage Spritverbrauch
+    = form.select :car, [['Olè', 'Olè'], ['roter Flitzer', 'roter Flitzer']], label: 'Auto', id: 'fuel_consumption_car', prompt: 'select car'
+    = form.text_field :liters, class: "form-control", label: 'liters', id: 'fuel_consumption_liters'
+    = form.text_field :price, class: "form-control", label: 'price', id: 'fuel_consumption_price'
+    = form.date_field :refuel_date, class: "form-control", label: 'refuel_date', id: 'fuel_consumption_refuel_date'
+    = form.text_field :distance, class: "form-control", label: 'distance', id: 'fuel_consumption_distance'
+    = form.text_field :avg_consumption, class: "form-control", label: 'avg_consumption', id: 'fuel_consumption_avg_consumption'
+    p.text-end
+      = form.submit class: 'btn btn-danger ml-auto mr-3'

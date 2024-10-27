@@ -27,10 +27,6 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem 'slim-rails', '~> 3.2'
-
-gem 'bootstrap', '~> 5.2'
-
 gem 'rails-ujs'
 
 # Use Redis adapter to run Action Cable in production
@@ -48,11 +44,20 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-# Use Sass to process CSS
-# gem "sassc-rails"
-
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
+
+gem "bootstrap"
+gem "bootstrap_form"
+
+gem "jquery-rails"
+
+gem 'slim-rails'
+
+# Use Sass to process CSS
+gem "sassc-rails"
+
+gem "font-awesome-sass"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
