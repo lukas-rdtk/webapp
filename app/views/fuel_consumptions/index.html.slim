@@ -1,22 +1,23 @@
-h1 Fuel Consumption Records
+.container
+  h1 Fuel Consumption Records
 
-table.table.table-striped
-  thead
-    tr
-      th Liters
-      th Price
-      th Refuel Date
-      th Distance
-      th Average Consumption
-      th Edit
-      th Delete
-  tbody
-    - @fuel_consumptions.each do |fuel_consumption|
+  table.table.table-striped
+    thead
       tr
-        td = fuel_consumption.liters
-        td = fuel_consumption.price
-        td = fuel_consumption.refuel_date
-        td = fuel_consumption.distance
-        td = fuel_consumption.avg_consumption
-        td = link_to '✍🏼', edit_fuel_consumption_path(fuel_consumption), class: 'btn btn-primary'
-        td = button_to '🗑️', fuel_consumption_path(fuel_consumption), method: :delete, class: 'btn btn-danger', title: 'Delete Fuel Record', onclick: "return confirm('Are you sure?')"
+        th Liters
+        th Price
+        th Refuel Date
+        th Distance
+        th Average Consumption
+        th Edit
+        th Delete
+    tbody
+      - @fuel_consumptions.each do |fuel_consumption|
+        tr
+          td = fuel_consumption.liters
+          td = fuel_consumption.price
+          td = fuel_consumption.refuel_date
+          td = fuel_consumption.distance
+          td = fuel_consumption.avg_consumption
+          td = link_to '✍🏼', edit_fuel_consumption_path(fuel_consumption), class: 'btn btn-primary'
+          td = button_to '🗑️', fuel_consumption_path(fuel_consumption), method: :delete, class: 'btn btn-danger', title: 'Delete Fuel Record', onclick: "return confirm('Are you sure?')"
