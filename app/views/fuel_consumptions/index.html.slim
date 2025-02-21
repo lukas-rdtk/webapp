@@ -8,7 +8,8 @@ table.table.table-striped
       th Refuel Date
       th Distance
       th Average Consumption
-      th Actions
+      th Edit
+      th Delete
   tbody
     - @fuel_consumptions.each do |fuel_consumption|
       tr
@@ -17,6 +18,5 @@ table.table.table-striped
         td = fuel_consumption.refuel_date
         td = fuel_consumption.distance
         td = fuel_consumption.avg_consumption
-        td
-          = button_to 'Delete', fuel_consumption_path(fuel_consumption), method: :delete, class: 'btn btn-danger', title: 'Delete Fuel Record', onclick: "return confirm('Are you sure?')"
-          
+        td = link_to '✍🏼', edit_fuel_consumption_path(fuel_consumption), class: 'btn btn-primary'
+        td = button_to '🗑️', fuel_consumption_path(fuel_consumption), method: :delete, class: 'btn btn-danger', title: 'Delete Fuel Record', onclick: "return confirm('Are you sure?')"
