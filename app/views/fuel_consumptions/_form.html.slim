@@ -1,5 +1,5 @@
 div data-controller="fuel_consumptionform"
-  = bootstrap_form_for(@fuel_consumption, url: fuel_consumptions_path, method: :post) do |form|
+  = bootstrap_form_for(@fuel_consumption) do |form|
     h1
       | Anlage Spritverbrauch
     = form.select :car, [['Olè', 'Olè'], ['roter Flitzer', 'roter Flitzer']], label: 'Auto', id: 'fuel_consumption_car', prompt: 'select car'
