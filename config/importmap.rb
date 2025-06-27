@@ -7,7 +7,6 @@ pin "@hotwired/stimulus", to: "stimulus.min.js", preload: true
 pin "@hotwired/stimulus-loading", to: "stimulus-loading.js", preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 
-pin "popper", to: "popper.js", preload: true
-pin "bootstrap", to: "bootstrap.min.js", preload: true
-
-pin "jquery", to: "jquery.min.js", preload: true
+# Bootstrap and jQuery from CDN
+pin "bootstrap", to: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+pin "jquery", to: "https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"
