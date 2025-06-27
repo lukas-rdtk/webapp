@@ -36,6 +36,10 @@ class FuelConsumptionsController < ApplicationController
     redirect_to fuel_consumptions_path, notice: 'Fuel consumption record was successfully deleted.'
   end
 
+  def overview
+    @fuel_consumptions = FuelConsumption.all
+  end
+
   private
 
   def set_fuel_consumption
