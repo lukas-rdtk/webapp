@@ -1,6 +1,9 @@
 .container
   h1 Fuel Consumption Records
 
+  = link_to 'Overview', fuel_consumptions_overview_path, class: 'btn btn-info mb-3'
+  = link_to 'Overview', overview_fuel_consumptions_path, class: 'btn btn-info mb-3'
+
   table.table.table-striped
     thead
       tr

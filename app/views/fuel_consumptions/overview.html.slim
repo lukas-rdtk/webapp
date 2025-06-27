@@ -1,0 +1,20 @@
+.container
+  h1 Fuel Consumption Overview
+
+  .row
+    .col-md-6
+      h2 Total Liters
+      p = @fuel_consumptions.sum(:liters)
+
+    .col-md-6
+      h2 Total Price
+      p = @fuel_consumptions.sum(:price)
+
+  .row
+    .col-md-6
+      h2 Average Consumption
+      p = @fuel_consumptions.average(:avg_consumption)
+
+    .col-md-6
+      h2 Total Distance
+      p = @fuel_consumptions.sum(:distance)
